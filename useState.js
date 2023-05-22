@@ -4,6 +4,9 @@
  */
 const useState = function useState( initalValue = !1 ) {
     let rootValue = initalValue, listeners = [];
+    function getValue() {
+        return rootValue
+    }
     function setValue( value ) {
         rootValue = value;
         listeners.forEach( listener => listener( rootValue ) );
